@@ -50,20 +50,16 @@ function Login() {
                   Forgot password?
                 </a>
               </p>
-              <MDBBtn outline className="mx-2 px-5" color="white" size="lg">
+              <MDBBtn
+                outline
+                className="mx-2 px-5 text-lime-50"
+                color="white"
+                size="lg"
+              >
                 Login
               </MDBBtn>
 
               <div className="d-flex flex-row mt-3 mb-5">
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <FontAwesomeIcon icon={faCoffee} />
-                </MDBBtn>
-
                 <MDBBtn
                   tag="a"
                   color="none"
