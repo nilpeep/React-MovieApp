@@ -4,7 +4,15 @@
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-bootstrap";
 import "./Navbar.css";
-import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
+import {
+  Nav,
+  Navbar,
+  Container,
+  NavDropdown,
+  Form,
+  Button,
+  FormControl,
+} from "react-bootstrap";
 import { NavLink as RRNavLink } from "react-router-dom";
 
 function Navigation() {
@@ -12,7 +20,7 @@ function Navigation() {
     <Navbar data-bs-theme="dark" expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={RRNavLink} to="/">
-          React-Router
+          CloudBreakers MovieApp
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -37,6 +45,14 @@ function Navigation() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for movies..."
+          />
+          <i class="search-icon fas fa-search"></i>
+        </div>
       </Container>
     </Navbar>
     // <ul>
