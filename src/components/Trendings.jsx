@@ -7,15 +7,16 @@ function Trendings() {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const apiKey = process.env.REACT_APP_API_KEY;
+
+  const getMovies = () => {
     const options = {
       method: "GET",
       url: "https://api.themoviedb.org/3/trending/movie/day",
       params: { language: "en-US" },
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OGUwYTIyYzAwZWJkYTVjYWJlZjExYzA0OTU4MmM5MyIsInN1YiI6IjY1ODhjZTdmZTI5NWI0NjMzNTU3ZjAzYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VoyIRoXlEhOt5y0wyNLPrM26ztdw7JzYgs1dIQwiLUk",
+        Authorization: `Bearer ${apiKey}`,
       },
     };
 
@@ -28,6 +29,10 @@ function Trendings() {
       .catch(function (error) {
         console.error(error);
       });
+  };
+
+  useEffect(() => {
+    getMovies();
   }, []);
 
   console.log(movies);

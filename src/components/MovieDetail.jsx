@@ -17,13 +17,13 @@ const MovieDetail = () => {
 
   const [loading, setLoading] = useState(true);
 
+  const apiKey = process.env.REACT_APP_API_KEY;
   const getMovie = () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OGUwYTIyYzAwZWJkYTVjYWJlZjExYzA0OTU4MmM5MyIsInN1YiI6IjY1ODhjZTdmZTI5NWI0NjMzNTU3ZjAzYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VoyIRoXlEhOt5y0wyNLPrM26ztdw7JzYgs1dIQwiLUk",
+        Authorization: `Bearer ${apiKey}`,
       },
     };
 
